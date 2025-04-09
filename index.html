@@ -1,27 +1,280 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zain Ul Abideen | Full Stack Developer</title>
-    <meta name="description" content="Zain Ul Abideen - Full Stack Developer with 5+ years of experience crafting scalable web applications using the MERN stack." />
-    <meta name="author" content="Zain Ul Abideen" />
-
-    <meta property="og:title" content="Zain Ul Abideen | Full Stack Developer" />
-    <meta property="og:description" content="Full Stack Developer with 5+ years of experience crafting scalable web applications using the MERN stack." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zain Ul Abideen | Full Stack Developer</title>
+  <meta name="description" content="Zain Ul Abideen - Full Stack Developer with 5+ years of experience crafting scalable web applications using the MERN stack.">
+  <meta name="author" content="Zain Ul Abideen">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Zain Ul Abideen | Full Stack Developer">
+  <meta property="og:description" content="Full Stack Developer with 5+ years of experience crafting scalable web applications using the MERN stack.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@lovable_dev">
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-purple: #9b87f5;
+      --secondary-purple: #7E69AB;
+      --dark-purple: #1A1F2C;
+      --light-purple: #D6BCFA;
+      --sky-blue: #33C3F0;
+      --white: #FFFFFF;
+      --medium-gray: #8A898C;
+      --dark-gray: #222222;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--white);
+      background: linear-gradient(to bottom, var(--dark-purple), #121420);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Stars Background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .stars:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(2px 2px at 20px 30px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 40px 70px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 60px 110px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 80px 150px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 100px 190px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 120px 230px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 140px 270px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 160px 310px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 180px 350px, white, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 200px 390px, white, rgba(0,0,0,0));
+      background-size: 200px 400px;
+      opacity: 0.3;
+      animation: starAnimation 100s linear infinite;
+    }
+    
+    @keyframes starAnimation {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-400px);
+      }
+    }
+    
+    .cosmic-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(155, 135, 245, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+      z-index: 0;
+      filter: blur(40px);
+    }
+    
+    section {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .name-highlight {
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary-purple), var(--sky-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    
+    .about-section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .cosmic-card {
+      backdrop-filter: blur(16px);
+      background-color: rgba(155, 135, 245, 0.05);
+      border: 1px solid rgba(155, 135, 245, 0.1);
+      border-radius: 16px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(155, 135, 245, 0.2);
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      backdrop-filter: blur(16px);
+      background-color: rgba(155, 135, 245, 0.05);
+      border: 1px solid rgba(155, 135, 245, 0.1);
+      color: var(--white);
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+    
+    .social-link:hover {
+      border-color: var(--primary-purple);
+      color: var(--primary-purple);
+    }
+    
+    .gradient-divider {
+      height: 1px;
+      width: 100px;
+      margin: 30px auto;
+      background: linear-gradient(to right, var(--primary-purple), var(--sky-blue));
+    }
+    
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    footer {
+      padding: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Stars Background -->
+  <div class="stars"></div>
+  
+  <!-- Cosmic Glow Effects -->
+  <div class="cosmic-glow" style="top: 20%; left: 10%;"></div>
+  <div class="cosmic-glow" style="top: 70%; right: 5%;"></div>
+  
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center">
+          <h1 class="display-3 mb-4 floating">
+            Hi, I'm <span class="name-highlight">Zain Ul Abideen</span>
+          </h1>
+          <h2 class="mb-4">A passionate Full Stack Developer</h2>
+          <p class="lead mb-5">
+            With 5+ years of experience crafting scalable web applications using the MERN stack
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="cosmic-card">
+            <h3 class="text-center mb-4">About Me</h3>
+            <div class="gradient-divider"></div>
+            <p>
+              I specialize in building responsive interfaces with React.js, architecting robust backend systems with Node.js/Express.js, 
+              and bridging complex technical requirements with intuitive user experiences.
+            </p>
+            <p>
+              My expertise spans RESTful API design, state management, and performance optimization—always with a focus on 
+              aligning technical excellence with business goals.
+            </p>
+            <p>
+              Currently leading development teams at CoreStack Solutions, I thrive on solving challenging problems 
+              while mentoring colleagues and implementing cutting-edge solutions.
+            </p>
+            <p>
+              Let's build something remarkable together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="mb-4">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Email">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+          <div class="gradient-divider"></div>
+          <p class="text-muted">
+            &copy; <span id="current-year">2023</span> Zain Ul Abideen. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Current Year Script -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
