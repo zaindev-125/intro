@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Code, Server, Layout, Star, Users, Zap } from 'lucide-react';
 
 const AboutSection = () => {
